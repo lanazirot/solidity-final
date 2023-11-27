@@ -1,16 +1,11 @@
-const { ethers } = require("hardhat");
-
 async function main() {
-    const MainContractNFT = await ethers.ContractFactory("ArGram")
-    const mainContract = await MainContractNFT.deploy()
-    const txhHash = mainContract.deployTransaction.hash;
-    const txReceipt = await ethers.providers.waitForTransaction(txhHash)
-    console.info("Contract deployed to address:", txReceipt.contractAddress)
+    const ArGramNFT = await ethers.getContractFactory("ArGram");
+    const arGramNFT = await ArGramNFT.deploy();
+    const txHash = arGramNFT.deployTransaction.hash;
+    const txReceipt = await ethers.provider.waitForTransaction(txHash);
+    console.log("Contract deployed to address:", txReceipt.contractAddress)
 }
 
 main()
-    .then(() => process.exit(0))
-    .catch(error => {
-        console.log(error)
-        process.exit(1)
-    })
+    .then(() => { process.exit(0) })
+    .catch((error) => { console.log(error), process.exit(1) })
