@@ -4,9 +4,9 @@
 
 Bienvenido al repositorio del proyecto final de Solidity centrado en la creación y gestión de NFTs (Tokens No Fungibles). Este proyecto tiene como objetivo proporcionar una plataforma robusta para la emisión, transferencia y verificación de NFTs utilizando contratos inteligentes en la blockchain de Ethereum usando la red de prueba Sepolia.
 
-<center>
-    <img style=" width: 200px; height: 300px; object-fit: fill;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"/>
-</center>
+<div align="center">
+    <img style=" width: 200px; height: 300px; object-fit: fill; margin: 0 auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"/>
+</div>
 
 ## Características Principales
 
