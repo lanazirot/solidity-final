@@ -2,7 +2,11 @@
 
 ## Descripción
 
-Bienvenido al repositorio del proyecto final de Solidity centrado en la creación y gestión de NFTs (Tokens No Fungibles). Este proyecto tiene como objetivo proporcionar una plataforma robusta para la emisión, transferencia y verificación de NFTs utilizando contratos inteligentes en la blockchain de Ethereum.
+Bienvenido al repositorio del proyecto final de Solidity centrado en la creación y gestión de NFTs (Tokens No Fungibles). Este proyecto tiene como objetivo proporcionar una plataforma robusta para la emisión, transferencia y verificación de NFTs utilizando contratos inteligentes en la blockchain de Ethereum usando la red de prueba Sepolia.
+
+<center>
+    <img style=" width: 200px; height: 300px; object-fit: fill;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"/>
+</center>
 
 ## Características Principales
 
@@ -10,15 +14,15 @@ Bienvenido al repositorio del proyecto final de Solidity centrado en la creació
 
 - **Transferencia Segura**: Implementamos mecanismos seguros para la transferencia de NFTs entre usuarios, garantizando la integridad y propiedad de los activos digitales.
 
-- **Interfaz de Usuario Intuitiva**: Se incluye una interfaz de usuario amigable para interactuar con el contrato inteligente, facilitando la creación y gestión de NFTs.
+## Background del proyecto
 
-- **Verificación de Propiedad**: Los usuarios pueden verificar la autenticidad de la propiedad de un NFT mediante la exploración de la blockchain de Ethereum.
+- Proyecto final de Ingeniería en Sistemas Computacionales, elaborado por Alan Abiud Castro Cruz (19100159) y Alan Peña Ortiz (19100234), alumnos de 9no semestre.
+
+- El proyecto consta de transferir 9 NFTs a los demás equipos, de recuerdos que vivimos durante toda la carrera. 
 
 ## Requisitos del Proyecto
 
 - **Node.js y npm**: Asegúrate de tener Node.js y npm instalados en tu máquina para ejecutar y gestionar las dependencias del proyecto.
-
-- **Truffle**: Utilizamos Truffle como marco de desarrollo para Solidity. Asegúrate de tener Truffle instalado globalmente para facilitar el desarrollo y las pruebas.
 
 - **MetaMask**: Necesitarás una billetera Ethereum con MetaMask para interactuar con el contrato inteligente y realizar transacciones en la red de prueba.
 
@@ -26,20 +30,13 @@ Bienvenido al repositorio del proyecto final de Solidity centrado en la creació
 
 1. Clona este repositorio en tu máquina local.
 
-2. Navega al directorio del proyecto y ejecuta `npm install` para instalar las dependencias.
+2. Navega al directorio del proyecto y ejecuta `npm i` para instalar las dependencias.
 
-3. Configura tu archivo `truffle-config.js` con la información de tu red de desarrollo o prueba de Ethereum.
+3. Despliega el contrato inteligente en tu red de prueba (usando `npx hardhat run`)
 
-4. Despliega el contrato inteligente en tu red de prueba utilizando Truffle.
+4. Ejecuta el archivo index.js usando `node index.js`
 
-5. Ejecuta la interfaz de usuario con `npm start` y accede a través de tu navegador para comenzar a interactuar con el contrato inteligente y gestionar tus NFTs.
 
 ## Contribuciones
 
-¡Las contribuciones son bienvenidas! Si encuentras algún problema o tienes sugerencias para mejorar el proyecto, por favor abre un issue o envía una solicitud de extracción.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE.md para obtener más detalles.
-
-¡Gracias por tu interés en nuestro proyecto NFT en Solidity! Esperamos que sea una experiencia emocionante trabajar con NFTs en la blockchain de Ethereum.
+Proyecto final, se aceptan sugerencias 👍
