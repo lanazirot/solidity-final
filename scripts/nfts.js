@@ -22,7 +22,7 @@ async function createImgInfo() {
         },
     });
     console.log(authResponse)
-    const stream = fs.createReadStream("./images/bro.png")
+    const stream = fs.createReadStream("./images/cyndatctp.jpeg")
     const data = new FormData()
     data.append("file", stream)
     const fileResponse = await
@@ -44,9 +44,9 @@ async function createImgInfo() {
 //createImgInfo()
 async function createJsonInfo() {
     const metadata = {
-        image: "https://gateway.pinata.cloud/ipfs/QmQzUbdYo1AetwcwiXwcbcrX9VrajY4EKhAKRyAb5yoLJA",
-        name: "MiPrimeraChambaNFTTest",
-        description: "Un criptobro",
+        image: "https://gateway.pinata.cloud/ipfs/QmdoQi3ke1L7Dc3Z3zsjW32rpkLTjMrEXBa42PGdP5BBcV",
+        name: "MyPrimerNFT",
+        description: "Cyndaquill todo chiquito todo panzon",
         attributes: [
             { "trait_type": "color", "value": "brown" },
             { "trait_type": "background", "value": "white" },
@@ -71,7 +71,7 @@ async function createJsonInfo() {
     const tokenURI = `https://gateway.pinata.cloud/ipfs/${IpfsHash}`;
     console.log(tokenURI)
 }
-//createJsonInfo()
+
 async function mintNFT() {
     const provider = new ethers.providers.JsonRpcProvider(API_URL);
     const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
@@ -87,7 +87,7 @@ async function mintNFT() {
         chainId,
         gasPrice,
         data: etherInterface.encodeFunctionData("mintNFT",
-            [PUBLIC_KEY, "https://gateway.pinata.cloud/ipfs/QmdHGW86ahdvz8K1ygehdJgNH5Mn3ahoznCNNwsUj9tpy3"])
+            [PUBLIC_KEY, "https://gateway.pinata.cloud/ipfs/QmPU9qBn2LMuHqp15dtTB7AxUUx4FBNaZskXVEWNCQFZkm"])
     }
     const estimateGas = await provider.estimateGas(transaction)
     transaction["gasLimit"] = estimateGas;

@@ -19,7 +19,7 @@ const nftContract = new ethers.Contract(
    contract.abi,
    wallet
 );
-var tokenId=2;
+var tokenId=1;
 //Estimate gas limit
 const gasLimit = await nftContract.estimateGas["safeTransferFrom(address,address,uint256)"](PUBLIC_KEY, USER_ADDRESS, tokenId, { gasPrice });
 console.log(gasLimit)
