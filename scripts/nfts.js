@@ -14,15 +14,20 @@ const {
     CONTRACT_ADDRESS
 } = process.env;
 
-async function createImgInfo() {
+/**
+ * Create image Info for NFTs
+ * @param {String} imagePath Image path
+ * @returns Promise<String> A promise with fileIPFS string
+ */
+async function createImgInfo(imagePath) {
     const authResponse = await axios.get("https://api.pinata.cloud/data/testAuthentication", {
         headers: {
             pinata_api_key: PINATA_API_KEY,
             pinata_secret_api_key: PINATA_SECRET_KEY,
         },
     });
-    console.log(authResponse)
-    const stream = fs.createReadStream("./images/cyndatctp.jpeg")
+    //console.log(authResponse)
+    const stream = fs.createReadStream(imagePath)
     const data = new FormData()
     data.append("file", stream)
     const fileResponse = await
@@ -39,19 +44,14 @@ async function createImgInfo() {
     const { data: fileData = {} } = fileResponse;
     const { IpfsHash } = fileData;
     const fileIPFS = `https://gateway.pinata.cloud/ipfs/${IpfsHash}`;
-    console.log(fileIPFS)
+    return Promise.resolve(fileIPFS)
 }
-//createImgInfo()
-async function createJsonInfo() {
-    const metadata = {
-        image: "https://gateway.pinata.cloud/ipfs/QmdoQi3ke1L7Dc3Z3zsjW32rpkLTjMrEXBa42PGdP5BBcV",
-        name: "MyPrimerNFT",
-        description: "Cyndaquill todo chiquito todo panzon",
-        attributes: [
-            { "trait_type": "color", "value": "brown" },
-            { "trait_type": "background", "value": "white" },
-        ]
-    }
+/**
+ * Create JSON info for NFTs
+ * @param {Array<Object>} metadata To create JSON Info
+ * @returns Promise<String> A promise containing tokenURI
+ */
+async function createJsonInfo(metadata) {
     const pinataJSONBody = {
         pinataContent: metadata
     }
@@ -69,10 +69,14 @@ async function createJsonInfo() {
     const { data: jsonData = {} } = jsonResponse;
     const { IpfsHash } = jsonData;
     const tokenURI = `https://gateway.pinata.cloud/ipfs/${IpfsHash}`;
-    console.log(tokenURI)
+    return Promise.resolve(tokenURI)
 }
-
-async function mintNFT() {
+/**
+ * Mint a new NFT using a tokenURI
+ * @param {String} tokenURI Token URI from createJsonInfo function
+ * @returns Promise<String,String> containing tokenId and TX Hash
+ */
+async function mintNFT(tokenURI) {
     const provider = new ethers.providers.JsonRpcProvider(API_URL);
     const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
     const etherInterface = new ethers.utils.Interface(contract.abi);
@@ -86,8 +90,7 @@ async function mintNFT() {
         nonce,
         chainId,
         gasPrice,
-        data: etherInterface.encodeFunctionData("mintNFT",
-            [PUBLIC_KEY, "https://gateway.pinata.cloud/ipfs/QmPU9qBn2LMuHqp15dtTB7AxUUx4FBNaZskXVEWNCQFZkm"])
+        data: etherInterface.encodeFunctionData("mintNFT",[PUBLIC_KEY, tokenURI])
     }
     const estimateGas = await provider.estimateGas(transaction)
     transaction["gasLimit"] = estimateGas;
@@ -95,12 +98,12 @@ async function mintNFT() {
     const transactionReceipt = await provider.sendTransaction(singedTx);
     await transactionReceipt.wait()
     const hash = transactionReceipt.hash;
-    console.log("Your Transaction has is:", hash)
 
     const receipt = await provider.getTransactionReceipt(hash);
     const { logs } = receipt;
     const tokenInBigNumber = ethers.BigNumber.from(logs[0].topics[3]);
     const tokenId = tokenInBigNumber.toNumber();
-    console.log("NFT token id", tokenId)
+    return Promise.resolve({tokenId, hash})
 }
-mintNFT()
+
+module.exports = { createImgInfo, createJsonInfo, mintNFT }

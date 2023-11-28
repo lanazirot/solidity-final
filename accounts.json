@@ -1,0 +1,65 @@
+[
+    {
+        "team": 1,
+        "address": "0x79198Ffe6ff89ed71eFD362cF411F8982e2B61ab",
+        "image": "./images/NFT 1 - Mirando al vacio.jpg",
+        "name": "NFT 1 - Mirando al vacio",
+        "description": "Mirando al vacio"
+    },
+    {
+        "team": 3,
+        "address": "0x09238e58d04029c05e18b4044e56c56A992218a7",
+        "image": "./images/NFT 3 - The last dance.jpg",
+        "name": "NFT 3 - The last dance",
+        "description": "The last dance"
+    },
+    {
+        "team": 4,
+        "address": "0x947d9640703f2F11bbd6CCcf63D001C421d6ae67",
+        "image": "./images/NFT 4 - La mejor decision de 8vo semestre.jpg",
+        "name": "NFT 4 - La mejor decision de 8vo semestre",
+        "description": "La mejor decision de 8vo semestre"
+    },
+    {
+        "team": 5,
+        "address": "0x907cB51bAA17C0A85825f28Cc53C32A0435938a5",
+        "image": "./images/NFT 5 - Complementando al NFT 1 en la desesperacion de un chico que iba al Tecate Live Out a ver a Lorde.jpg",
+        "name": "NFT 5 - Complementando al NFT 1 en la desesperacion de un chico que iba al Tecate Live Out a ver a Lorde",
+        "description": "Complementando al NFT 1 en la desesperacion de un chico que iba al Tecate Live Out a ver a Lorde"
+    },
+    {
+        "team": 6,
+        "address": "0x05f73d32a2aBae186bD0DBCACfaDD7C79d6FA943",
+        "image": "./images/NFT 6 - La bendicion de puerto.jpg",
+        "name": "NFT 6 - La bendicion de puerto",
+        "description": "La bendicion de puerto"
+    },
+    {
+        "team": 8,
+        "address": "0xbb5a3b6902ee652eea4073abb349d892561caa29",
+        "image": "./images/NFT 7 - La ultima cena.jpg",
+        "name": "NFT 7 - La ultima cena",
+        "description": "La ultima cena"
+    },
+    {
+        "team": 9,
+        "address": "0x8ce113e2345addd87c00727890aed3471a135ae1",
+        "image": "./images/NFT 8 - Unas donas o que.jpg",
+        "name": "NFT 8 - Unas donas o que",
+        "description": "Unas donas o que yumi yumi"
+    },
+    {
+        "team": 10,
+        "address": "0x90ca446ecBE474288562BeF18D5723094b851806",
+        "image": "./images/NFT 9 - Algo tranqui en el live out.jpg",
+        "name": "NFT 9 - Algo tranqui en el live out",
+        "description": "Algo tranqui en el live out (termina bien)"
+    },
+    {
+        "team": 11,
+        "address": "0x6e1A8b9c92650740f6951d13bF44F90557f89C30",
+        "image": "./images/NFT 2 - Apagalo y Morin apaga el servidor.jpg",
+        "name": "NFT 2 - Apagalo y Morin apaga el servidor",
+        "description": "Apagalo y Morin apaga el servidor (si aprobamos)"
+    }
+]
